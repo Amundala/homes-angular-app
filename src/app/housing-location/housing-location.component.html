@@ -1,0 +1,26 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+  <!-- Repeat this block for each housing location -->
+  <div class="flex flex-co items-center">
+    <img
+      class="w-52 rounded-md"
+      [src]="housingLocation.photo"
+      alt="Exterior of photo {{ housingLocation.name }}"
+    />
+    <h2>{{ housingLocation.name }}</h2>
+    <h2>{{ housingLocation.city }}, {{ housingLocation.state }}</h2>
+  </div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+  <div class="min-h-[100px] bg-teal-600">
+    <img
+      class="w-52 rounded-md"
+      [src]="housingLocation.photo"
+      alt="Exterior of photo {{ housingLocation.name }}"
+    />
+    <h2>{{ housingLocation.name }}</h2>
+    <h2>{{ housingLocation.city }}, {{ housingLocation.state }}</h2>
+  </div>
+  <div class="min-h-[100px] bg-slate-600"></div>
+  <div class="min-h-[100px] bg-red-600"></div>
+  <div class="min-h-[100px] bg-blue-600"></div>
+</div>
