@@ -1,14 +1,15 @@
 <main>
   <header class="brand-name">
-    <img
-      class="w-32"
-      src="/assets/logo/kamanayo.png"
-      alt="logo"
-      aria-hidden="true"
-    />
+    <a [routerLink]="['/']">
+      <img
+        class="w-32"
+        src="/assets/logo/kamanayo.png"
+        alt="logo"
+        aria-hidden="true"
+      />
+    </a>
   </header>
   <section class="content">
     <router-outlet></router-outlet>
-    <!-- <app-home></app-home> -->
   </section>
 </main>
