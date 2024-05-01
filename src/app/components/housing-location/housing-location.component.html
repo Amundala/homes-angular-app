@@ -1,0 +1,11 @@
+<!-- Housing block -->
+<div class="flex flex-col items-center">
+  <img
+    class="w-52 rounded-md max-h-40"
+    [src]="housingLocation.photo"
+    alt="Exterior of photo {{ housingLocation.name }}"
+  />
+  <h2>{{ housingLocation.name }}</h2>
+  <h2>{{ housingLocation.city }}, {{ housingLocation.state }}</h2>
+  <a [routerLink]="['details', housingLocation.id]">Learn More</a>
+</div>

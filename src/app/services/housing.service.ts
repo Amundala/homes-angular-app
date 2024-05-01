@@ -1,19 +1,12 @@
-import { Component } from '@angular/core';
-import { HousingLocationComponent } from '../housing-location/housing-location.component';
-import { HousingLocation } from '../housing-location';
-import { CommonModule } from '@angular/common';
+import { Injectable } from '@angular/core';
+import { HousingLocation } from '../interfaces/housing-location';
 
-@Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [HousingLocationComponent, CommonModule],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+@Injectable({
+  providedIn: 'root',
 })
-export class HomeComponent {
-  isButtonDisabled: boolean = true;
+export class HousingService {
+  constructor() {}
   readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
-
   housingLocationList: HousingLocation[] = [
     {
       id: 0,
@@ -116,4 +109,12 @@ export class HomeComponent {
       laundry: true,
     },
   ];
+
+  //--- Get All all housing location function ---
+  getAllHousingLocations(): HousingLocation[] {
+    return this.housingLocationList;
+  }
+  getHousingLocationById(id: number): HousingLocation | undefined {
+    return this.housingLocationList.find((houseId) => houseId.id === id);
+  }
 }

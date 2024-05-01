@@ -18,9 +18,9 @@
   </form>
 </section>
 
-<section>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 pt-10">
   <app-housing-location
     *ngFor="let housingLocationItem of housingLocationList"
     [housingLocation]="housingLocationItem"
   ></app-housing-location>
-</section>
+</div>
