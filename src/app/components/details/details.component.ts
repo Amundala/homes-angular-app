@@ -25,9 +25,16 @@ export class DetailsComponent {
     //--- getting the actual ID from this compent's URL ---
     this.houseLocationId = Number(this.route.snapshot.params['id']);
     //--- Invoking getHousingLocationById function from the service---
-    this.housingLocationDetail = this.housingService.getHousingLocationById(
-      this.houseLocationId
-    );
+    // this.housingLocationDetail = this.housingService.getHousingLocationById(
+    //   this.houseLocationId
+    // );
+
+    //--- Using Ansychronous call ---
+    this.housingService
+      .getHousingLocationById(this.houseLocationId)
+      .then((housingLocation) => {
+        this.housingLocationDetail = housingLocation;
+      });
   }
 
   //--- creating form object ----

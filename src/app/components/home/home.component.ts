@@ -23,8 +23,15 @@ export class HomeComponent {
   //--- Injecting Housing Servic to be invoked by the constructor ---
   housingSerive: HousingService = inject(HousingService);
   constructor() {
-    this.housingLocationList = this.housingSerive.getAllHousingLocations();
-    this.filteredLocationList = this.housingLocationList;
+    //--- Using Ansychronous call ---
+    this.housingSerive
+      .getAllHousingLocations()
+      .then((housingLocationList: HousingLocation[]) => {
+        this.housingLocationList = housingLocationList;
+        this.filteredLocationList = this.housingLocationList;
+      });
+    //this.housingLocationList = this.housingSerive.getAllHousingLocations();
+    //this.filteredLocationList = this.housingLocationList;
   }
 
   //--- search form object ----
