@@ -7,5 +7,45 @@
   />
   <h2>{{ housingLocationDetail?.name }}</h2>
   <h2>{{ housingLocationDetail?.city }}, {{ housingLocationDetail?.state }}</h2>
-  <!-- <a [routerLink]="['details', housingLocation.id]">Learn More</a> -->
+
+  <div>
+    <span class="m-4"></span>
+    <h2>About this housing location</h2>
+    <hr class="m-4" />
+    <ul>
+      <li>Units Available: {{ housingLocationDetail?.availableUnits }}</li>
+      <li>Does the location have wifi: {{ housingLocationDetail?.wifi }}</li>
+      <li>
+        Does the location have laundry: {{ housingLocationDetail?.laundry }}
+      </li>
+    </ul>
+  </div>
+  <div class="gap-2">
+    <span class="m-4"></span>
+    <h2>Apply now to live here</h2>
+    <hr class="m-4" />
+    <form [formGroup]="applicationForm" (submit)="submitApplication()">
+      <label for="">First Name</label>
+      <input
+        class="border border-slate-300 p-3 rounded-md"
+        type="text"
+        formControlName="izinaRibanza"
+      />
+      <label for="">Last Name</label>
+      <input
+        class="border border-slate-300 p-3 rounded-md"
+        type="text"
+        formControlName="izinaRihera"
+      />
+      <label for="">Email</label>
+      <input
+        class="border border-slate-300 p-3 rounded-md"
+        type="text"
+        formControlName="emailYawe"
+      />
+      <button class="text-white bg-slate-950 rounded-lg p-2" type="submit">
+        Apply now
+      </button>
+    </form>
+  </div>
 </div>

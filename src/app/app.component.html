@@ -1,5 +1,6 @@
 <main>
   <header class="brand-name">
+    <!-- enable once logo clicked to redirect to the home page -->
     <a [routerLink]="['/']">
       <img
         class="w-32"
@@ -10,6 +11,7 @@
     </a>
   </header>
   <section class="content">
+    <!-- this is to enlable routing take place in app component as the our default root -->
     <router-outlet></router-outlet>
   </section>
 </main>

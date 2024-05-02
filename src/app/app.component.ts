@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { RouterLink } from '@angular/router';
 
+//--- lnculde routerLink & RouterOutlet into @component Import to be accessible ---
 @Component({
   selector: 'app-root',
   standalone: true,

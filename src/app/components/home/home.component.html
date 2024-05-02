@@ -5,12 +5,14 @@
         type="text"
         placeholder="Filter by city"
         class="rounded-lg border-2 border-slate-900 p-1 px-10"
+        #filter
       />
     </div>
     <div class="flex flex-col">
       <button
         class="bg-orange-900 text-white rounded-xl py-2 px-5"
         type="button"
+        (click)="filterResults(filter.value)"
       >
         Search
       </button>
@@ -20,7 +22,7 @@
 
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 pt-10">
   <app-housing-location
-    *ngFor="let housingLocationItem of housingLocationList"
+    *ngFor="let housingLocationItem of filteredLocationList"
     [housingLocation]="housingLocationItem"
   ></app-housing-location>
 </div>

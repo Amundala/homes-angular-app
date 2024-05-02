@@ -7,6 +7,8 @@ import { HousingLocation } from '../interfaces/housing-location';
 export class HousingService {
   constructor() {}
   readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
+
+  //--- Our data structure ----
   housingLocationList: HousingLocation[] = [
     {
       id: 0,
@@ -116,5 +118,12 @@ export class HousingService {
   }
   getHousingLocationById(id: number): HousingLocation | undefined {
     return this.housingLocationList.find((houseId) => houseId.id === id);
+  }
+  //--- Form Function to accept data from the form ---
+  serviceSubmitApplication(firstName: string, lastName: string, email: string) {
+    console.log(`
+    Homes application receives: firstName:  ${firstName},
+    lastName: ${lastName}, email: ${email}
+    `);
   }
 }
